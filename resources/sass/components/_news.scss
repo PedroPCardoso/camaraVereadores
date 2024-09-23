@@ -1,0 +1,42 @@
+.news {
+    h2 {
+        color: $primary-color;
+        margin-bottom: 1.5rem;
+    }
+
+    .card {
+        border: none;
+        margin-bottom: 2rem;
+
+        img {
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+
+        .card-body {
+            background-color: $light-gray;
+
+            .card-title {
+                color: $secondary-color;
+                font-size: 1.25rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            .card-text {
+                color: $dark-gray;
+                font-size: 0.95rem;
+            }
+
+            .btn-primary {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                @include transition(background-color);
+
+                &:hover {
+                    background-color: adjust-color($primary-color, $lightness: 10%);
+                    border-color: adjust-color($primary-color, $lightness: 10%);
+                }
+            }
+        }
+    }
+}

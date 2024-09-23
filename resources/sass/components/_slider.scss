@@ -1,0 +1,29 @@
+/* Estilos do Slider */
+.slider {
+    .carousel-item {
+        height: 400px;
+        background-color: $dark-gray;
+        color: $white-color;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.7;
+        }
+
+        .carousel-caption {
+            bottom: 20px;
+
+            h5 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(100%);
+    }
+}

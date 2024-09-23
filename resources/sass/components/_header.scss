@@ -1,0 +1,27 @@
+header#header {
+    background-color: $header-bg-color;
+    border-bottom: 1px solid $light-gray;
+
+    .navbar {
+        padding: 1rem 0;
+
+        .navbar-brand {
+            img {
+                height: 60px;
+            }
+        }
+
+        .navbar-nav {
+            .nav-link {
+                color: $primary-color;
+                font-weight: 600;
+                padding: 0.5rem 1rem;
+                @include transition(color);
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}

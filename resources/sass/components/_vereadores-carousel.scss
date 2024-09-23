@@ -1,0 +1,54 @@
+.vereadores-carousel {
+    margin-top: 2rem;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 1.5rem;
+    }
+
+    .card {
+        border: none;
+        text-align: center;
+        margin: 0 auto;
+
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 0 auto 1rem auto;
+        }
+
+        .card-body {
+            padding: 0.5rem;
+
+            .card-title {
+                color: $secondary-color;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            .card-text {
+                color: $primary-color;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .btn-primary {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                @include transition(background-color);
+
+                &:hover {
+                    background-color: adjust-color($primary-color,$lightness: 10%);
+                    border-color: adjust-color($primary-color,$lightness: 10%);
+                }
+            }
+        }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        filter: invert(100%);
+    }
+}

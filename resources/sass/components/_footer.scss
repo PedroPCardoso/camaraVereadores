@@ -1,0 +1,50 @@
+footer#footer {
+    background-color: $footer-bg-color;
+    color: $footer-text-color;
+    padding: 2rem 0;
+
+    a {
+        color: $footer-text-color;
+        @include transition(color);
+
+        &:hover {
+            color: adjust-color($footer-text-color, $lightness: 10%);
+            text-decoration: none;
+        }
+    }
+
+    .footer-widgets {
+        .widget-title {
+            color: $white-color;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 0.5rem;
+
+                a {
+                    color: $white-color;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid adjust-color($footer-bg-color, $lightness: 10%);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}

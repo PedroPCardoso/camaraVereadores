@@ -1,0 +1,51 @@
+@import 'variables/colors';
+@import 'variables/mixins';
+
+// Importando os estilos dos componentes
+@import 'components/header';
+@import 'components/footer';
+@import 'components/slider';
+@import 'components/news';
+@import 'components/agenda';
+@import 'components/vereadores-carousel';
+
+// Importando o Bootstrap (se ainda não foi importado)
+@import 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $dark-gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $secondary-color;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+        color: adjust-color($primary-color, $lightness: -10%);
+    }
+}
+
+.btn-custom {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $white-color;
+    @include transition(background-color);
+
+    &:hover {
+        background-color: adjust-color($primary-color,  $lightness: -10%);
+        border-color: adjust-color($primary-color,  $lightness: -10%);
+        color: $white-color;
+    }
+}
