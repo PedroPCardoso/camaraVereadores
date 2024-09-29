@@ -2,8 +2,14 @@
     background-color: #fff;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 
     #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
         a {
             img {
                 height: 60px;
@@ -20,7 +26,9 @@
     .header-extras {
         list-style: none;
         display: flex;
+        justify-content: center;
         align-items: center;
+        margin-top: 10px;
 
         li {
             margin-left: 20px;
@@ -49,14 +57,22 @@
 
     #header-wrap {
         background-color: #bacf00;
+        height: auto;
+        padding: 10px 0;
 
         nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             ul {
                 list-style: none;
                 padding: 0;
                 margin: 0;
                 display: flex;
                 justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
 
                 li {
                     margin: 0 15px;
@@ -73,6 +89,7 @@
                             color: #ddd;
                         }
 
+                        /* Submenu */
                         &+ul {
                             display: none;
                             position: absolute;
@@ -82,29 +99,47 @@
                             padding: 10px 0;
                             border-radius: 5px;
                             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-                            li {
-                                margin: 0;
-
-                                a {
-                                    color: #000;
-                                    padding: 10px 20px;
-                                    display: block;
-
-                                    &:hover {
-                                        background-color: #f7f7f7;
-                                        color: #094C77;
-                                    }
-                                }
-                            }
+                            z-index: 1000;
+                            min-width: 180px;
+                            /* Garante que o submenu tenha uma largura mínima */
                         }
 
-                        &:hover+ul {
+                        /* Mostra o submenu quando o mouse está sobre o item principal ou sobre o submenu */
+                        &:hover+ul,
+                        li:hover ul {
                             display: block;
+                        }
+                    }
+
+                    /* Garante que o submenu não feche ao mover o mouse para dentro dele */
+                    ul:hover {
+                        display: block;
+                    }
+
+                    ul li {
+                        position: relative;
+
+                        a {
+                            color: #000;
+                            padding: 10px 20px;
+                            display: block;
+
+                            &:hover {
+                                background-color: #f7f7f7;
+                                color: #094C77;
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
+
+.clearfix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
