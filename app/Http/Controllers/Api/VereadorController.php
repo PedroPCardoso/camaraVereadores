@@ -9,6 +9,26 @@ class VereadorController extends Controller
 {
     public function index()
     {
-        return Vereador::all();
+        $vereadores = Vereador::all()->toArray();
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        array_push($vereadores, Vereador::find(1));
+        return $vereadores;
+        #        return Vereador::all();
     }
 }

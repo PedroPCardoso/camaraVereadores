@@ -7,8 +7,8 @@
                     :key="index">
                     <div class="row">
                         <div class="col-md-2" v-for="vereador in grupo" :key="vereador.id">
-                            <div class="card">
-                                <img :src="vereador.foto" class="card-img-top" :alt="vereador.nome">
+                            <div class="card  border-0">
+                                <img :src="vereador.foto_url" class="card-img-top" :alt="vereador.nome">
                                 <div class="card-body text-center">
                                     <h6 class="card-title">{{ vereador.nome }}</h6>
                                     <p class="card-text">{{ vereador.partido }}</p>

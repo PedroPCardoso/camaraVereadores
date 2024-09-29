@@ -11,4 +11,9 @@ class NoticiaController extends Controller
     {
         return Noticia::orderBy('created_at', 'desc')->take(6)->get();
     }
+
+    public function show($id)
+    {
+        return Noticia::find($id);
+    }
 }

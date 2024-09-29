@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 
 class Noticia extends Model
 {
@@ -16,4 +17,16 @@ class Noticia extends Model
         'conteudo',
         'imagem',
     ];
+
+    protected $appends = ['image_url'];
+
+    /**
+     * Acessor para obter a URL completa da imagem.
+     *
+     * @return string
+     */
+    public function getImageUrlAttribute()
+    {
+        return $this->imagem ? Storage::url($this->imagem) : null;
+    }
 }

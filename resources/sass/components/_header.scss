@@ -1,25 +1,108 @@
-header#header {
-    background-color: $header-bg-color;
-    border-bottom: 1px solid $light-gray;
+#header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    .navbar {
-        padding: 1rem 0;
-
-        .navbar-brand {
+    #logo {
+        a {
             img {
                 height: 60px;
+                width: auto;
+                transition: all 0.3s ease;
+            }
+
+            &.retina-logo img {
+                height: 80px;
             }
         }
+    }
 
-        .navbar-nav {
-            .nav-link {
-                color: $primary-color;
-                font-weight: 600;
-                padding: 0.5rem 1rem;
-                @include transition(color);
+    .header-extras {
+        list-style: none;
+        display: flex;
+        align-items: center;
 
-                &:hover {
-                    color: $secondary-color;
+        li {
+            margin-left: 20px;
+
+            .i-plain {
+                font-size: 24px;
+                margin-right: 10px;
+            }
+
+            .he-text {
+                font-size: 14px;
+                color: #666;
+
+                a {
+                    color: #094C77;
+                    font-weight: bold;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #0056b3;
+                    }
+                }
+            }
+        }
+    }
+
+    #header-wrap {
+        background-color: #bacf00;
+
+        nav {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+
+                li {
+                    margin: 0 15px;
+                    position: relative;
+
+                    a {
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #ddd;
+                        }
+
+                        &+ul {
+                            display: none;
+                            position: absolute;
+                            background-color: #fff;
+                            top: 100%;
+                            left: 0;
+                            padding: 10px 0;
+                            border-radius: 5px;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+                            li {
+                                margin: 0;
+
+                                a {
+                                    color: #000;
+                                    padding: 10px 20px;
+                                    display: block;
+
+                                    &:hover {
+                                        background-color: #f7f7f7;
+                                        color: #094C77;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover+ul {
+                            display: block;
+                        }
+                    }
                 }
             }
         }

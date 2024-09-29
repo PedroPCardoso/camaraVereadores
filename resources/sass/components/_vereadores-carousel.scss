@@ -3,28 +3,35 @@
 
     h2 {
         color: $primary-color;
+        font-family: 'Roboto', sans-serif;
         margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     .card {
         border: none;
         text-align: center;
         margin: 0 auto;
+        background-color: #f7f7f7; // Cor ajustada conforme o tema do site
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
         img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 120px; // Aumentei o tamanho para destaque
+            height: 120px;
             object-fit: cover;
             margin: 0 auto 1rem auto;
         }
 
         .card-body {
-            padding: 0.5rem;
+            padding: 1rem; // Ajuste de espaçamento para ficar mais alinhado ao design
+            background-color: #fff;
+            border-radius: 10px;
 
             .card-title {
                 color: $secondary-color;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 font-weight: bold;
             }
 
@@ -37,11 +44,13 @@
             .btn-primary {
                 background-color: $primary-color;
                 border-color: $primary-color;
+                border-radius: 30px; // Estilo de botão arredondado conforme tema
+                padding: 0.5rem 2rem;
                 @include transition(background-color);
 
                 &:hover {
-                    background-color: adjust-color($primary-color,$lightness: 10%);
-                    border-color: adjust-color($primary-color,$lightness: 10%);
+                    background-color: adjust-color($primary-color, $lightness: 10%);
+                    border-color: adjust-color($primary-color, $lightness: 10%);
                 }
             }
         }

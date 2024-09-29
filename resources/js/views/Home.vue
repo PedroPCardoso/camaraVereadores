@@ -1,6 +1,8 @@
 <template>
     <div>
         <Slider :banners="banners" />
+        <PortalLinks />
+
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -10,7 +12,9 @@
                     <Agenda :eventos="eventos" />
                 </div>
             </div>
+            <MesaDiretora :membros="membros" />
             <VereadoresCarousel :vereadores="vereadores" />
+
         </div>
     </div>
 </template>
@@ -18,10 +22,11 @@
 <script>
 import Slider from './components/Slider.vue';
 import News from './components/News.vue';
+import PortalLinks from './components/PortalLinks.vue';
 import Agenda from './components/Agenda.vue';
 import VereadoresCarousel from './components/VereadoresCarousel.vue';
+import MesaDiretora from './components/MesaDiretora.vue';
 import axios from 'axios';
-
 export default {
     name: 'Home',
     components: {
@@ -29,6 +34,8 @@ export default {
         News,
         Agenda,
         VereadoresCarousel,
+        PortalLinks,
+        MesaDiretora
     },
     data() {
         return {
@@ -36,6 +43,7 @@ export default {
             noticias: [],
             eventos: [],
             vereadores: [],
+            membros: [],
         };
     },
     created() {
@@ -54,6 +62,9 @@ export default {
             });
             axios.get('/api/vereadores').then(response => {
                 this.vereadores = response.data;
+            });
+            axios.get('/api/mesa-diretora').then(response => {
+                this.membros = response.data;
             });
         },
     },
